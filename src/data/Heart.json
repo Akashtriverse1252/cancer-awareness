@@ -1,0 +1,68 @@
+[
+  {
+    "ID": 1,
+    "Icon": "http://assure.triverseadvertising.com/images/total-choles.webp",
+    "PackageName": "Thyroid Stimulating Hormone (tsh)",
+    "ActualPrice": "280",
+    "DiscountPrice": "196",
+    "TestParmeter": "TSH is an early indicator of decreased thyroid reserve. This assay helps to diagnose hypothyroidism and hyperthyroidism, monitors T4 replacement or T4 suppressive therapy and quantifies TSH levels in the subnormal range.",
+    "PreTestInfo": "Sample to be given at the same time in followup cases.",
+    "TestInfoDate": "Test is run daily and report is available same day.",
+    "book": "https://www.assurePathlabs.com/add_to_cart.php?id=181"
+  },
+  {
+    "ID": 2,
+    "Icon": "http://assure.triverseadvertising.com/images/triglycerides.webp",
+    "PackageName": "Free Thyroxine (ft4)",
+    "ActualPrice": "400",
+    "DiscountPrice": "280",
+    "TestParmeter": "Free T4 is the metabolically active fraction of thyroxine. FT4 along with TSH gives an accurate picture of thyroid status in patients with abnormal thyroid binding globulin (TBG) like in pregnancy and individuals on treatment with estrogens, androgens or salicylates. This assay is useful for diagnosing both Hypo / Hyperthyroidism",
+    "PreTestInfo": "No special preparation required",
+    "TestInfoDate": "Test is run daily and report is available same day.",
+    "book": "https://www.assurePathlabs.com/add_to_cart.php?id=101"
+  },
+  {
+    "ID": 3,
+    "Icon": "http://assure.triverseadvertising.com/images/ecg.webp",
+    "PackageName": "Free Tri-iodothyronine (ft3)",
+    "ActualPrice": "400",
+    "DiscountPrice": "280",
+    "TestParmeter": "Free T3 is a supplemental test to TSH and free T4 for confirmation of thyroid status. This assay also helps to monitor thyroid hormone replacement therapy. Elevated levels are associated with Thyrotoxicosis or excess thyroid hormone replacement.",
+    "PreTestInfo": "No special preparation required",
+    "TestInfoDate": "Test is run daily and report is available same day.",
+    "book": "https://www.assurePathlabs.com/add_to_cart.php?id=102"
+  },
+  {
+    "ID": 4,
+    "Icon": "http://assure.triverseadvertising.com/images/hhp.webp",
+    "PackageName": "Thyroid Profile",
+    "ActualPrice": "550",
+    "DiscountPrice": "250",
+    "TestParmeter": "Total thyroid hormone levels include the free as well as the bound form and hence may not reflect the active unbound form of the hormone which is directly related to thyroid dysfunction. Factors affecting the thyroid binding globulin will alter various parameters and may not be a true indicator of primary thyroid disease.",
+    "PreTestInfo": "No special preparation required",
+    "TestInfoDate": "Test is run daily and report is available same day.",
+    "book": "https://www.assurePathlabs.com/add_to_cart.php?id=180"
+  },
+  {
+    "ID": 5,
+    "Icon": "http://assure.triverseadvertising.com/images/hhp.webp",
+    "PackageName": "FREE THYROID PROFILE FT3, FT4, TSH",
+    "ActualPrice": "1350",
+    "DiscountPrice": "1010",
+    "PreTestInfo": "No special preparation required",
+    "TestParmeter": "FREE TRI-IODOTHYRONINE (FT3), FREE THYROXINE (FT4), THYROID STIMULATING HORMONE (TSH)",
+    "TestInfoDate": "Test is run daily and report is available same day.",
+    "book": "https://www.assurePathlabs.com/add_to_cart.php?id=452"
+  },
+  {
+    "ID": 6,
+    "Icon": "http://assure.triverseadvertising.com/images/hhp.webp",
+    "PackageName": "ANTI THYROGLOBULIN ANTIBODIES",
+    "ActualPrice": "1370",
+    "DiscountPrice": "959",
+    "PreTestInfo": "No special preparation required",
+    "TestInfo": "Anti Thyroglobulin Antibodies (TgAb) are special proteins that target thyroglobulin, a crucial protein produced by the thyroid gland. The thyroid plays a vital role in regulating hormones that control various bodily functions.",
+    "TestInfoDate": "Test Result is available 3 day.",
+    "book": "https://www.assurePathlabs.com/add_to_cart.php?id=34"
+  }
+]
