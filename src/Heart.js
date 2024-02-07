@@ -400,8 +400,8 @@ export const Heart = () => {
             </li>
 
             <li>
-              Lifestyle factors such as heavy smoking and consumption of
-              alcohol can also damage DNA and lead to cancer
+              Lifestyle factors such as heavy smoking and consumption of alcohol
+              can also damage DNA and lead to cancer
             </li>
             <li>Environmental factors such as air and water pollution</li>
             <li>Inherited genetic defects</li>
@@ -480,13 +480,23 @@ export const Heart = () => {
                   <AccordionItemButton>{item.title}</AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel className="accordion__panel active">
-                  <p>{item.content.title}</p>
+                  <p dangerouslySetInnerHTML={{ __html: item.content  .title }}></p>
                   {item.content.points.length > 0 && (
                     <ul>
                       {item.content.points.map((point, pointIndex) => (
                         <li key={pointIndex}>{point}</li>
                       ))}
                     </ul>
+                  )}
+                  {item.content1 && (
+                    <>
+                      <p dangerouslySetInnerHTML={{ __html: item.content1.title }}></p>
+                      <ul>
+                        {item.content1.points.map((point, pointIndex) => (
+                          <li key={pointIndex}>{point}</li>
+                        ))}
+                      </ul>
+                    </>
                   )}
                 </AccordionItemPanel>
               </AccordionItem>

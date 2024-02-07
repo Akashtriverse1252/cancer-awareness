@@ -1,54 +1,83 @@
 [
   {
-    "title": "Is home sample collection available for Thyroid test?",
+    "title": "What is cancer?",
     "content": {
-      "title": "Yes, home sample collection is available for the diagnostic tests as per your needs. To book your blood sample collection call: 0181-4667555",
+      "title": "Cancer is the rapid spread of abnormal cells that grow beyond their usual boundaries, and can invade adjoining parts of the body or spread to other organs. Cancer can start almost anywhere in the human body when abnormal or damaged cells grow and multiply when they shouldn’t. These cells may form tumors, which are lumps of tissue.Tumors can be cancerous (malignant) or not cancerous (benign).",
       "points": []
     }
   },
   {
-    "title": "Why is a Thyroid Test necessary?",
+    "title": "What are the symptoms of cancer?",
     "content": {
-      "title": "You might need a thyroid test if you have symptoms like fatigue, sluggishness, restlessness, irritability or unexplained weight changes. Thyroid tests can help diagnose thyroid problems like hypothyroidism, hyperthyroidism and various types of autoimmune thyroiditis.",
-      "points": []
-    }
-  },
-  {
-    "title": "Is fasting required for thyroid tests?",
-    "content": {
-      "title": "Generally, you don't need to fast before doing a Thyroid Tests. However, it is recommended to do thyroid test during the same time of the day as was done previously due to circadian changes in body.",
-      "points": []
-    }
-  },
-  {
-    "title": "In how much time will I get my test report?",
-    "content": {
-      "title": "We make sure that reports are sent to you as soon as possible so that you can begin with the right treatment and medications on time. You will get your reports within 24 hours.",
-      "points": []
-    }
-  },
-  {
-    "title": "What is the normal range of T3 T4 and TSH?",
-    "content": {
-      "title": "The normal ranges for T3 (Trilodothyronine) is 60-181ng/dl, T4 (Thyroxine) is 4.5-12.6ng/dl, TSH (Ultrasensitive) is 0.13-6.33uIU/ml.",
-      "points": []
-    }
-  },
-  {
-    "title": "What is included in a Thyroid Test Package?",
-    "content": {
-      "title": "In our  Thyroid profile,  Assure Pathlabs provides you with T3, T4 and TSH. Our other packages includes essential assessments, such as::",
+      "title": "The signs and symptoms of cancer depend on which part of the body is affected. Some common signs and symptoms include:",
       "points": [
-        "Thyroid Stimulating Hormone (TSH) test to evaluate thyroid function.",
-        "Free T3 and Free T4 tests to assess thyroid hormone levels.",
-        "Thyroid antibody tests to check for autoimmune thyroid conditions."
+        "Lump or area of thickening that can be felt under the skin",
+        "Weight changes including unexpected loss or gain",
+        "Persistent cough or shortness of breath",
+        "Persistent, unexplained fever or night sweats",
+        "Unexplained bleeding or bruising",
+        "Skin changes, such as yellowing, darkening, or reddening of the skin, sores that will not heal, or changes in existing warts"
       ]
     }
   },
   {
-    "title": "How to prepare for a Thyroid Test?",
+    "title": "What are the risk factors for cancer?",
     "content": {
-      "title": "To ensure accurate results, its important to follow any specific instructions provided by Assure Pathlabs. For thyroid profile, however, you do not need any special preparation. Consult with your healthcare provider for personalized guidance.",
+      "title": "Anyone can get cancer. However there are certain conditions that increase the likelihood of developing cancer. These are some of them:",
+      "points": [
+        "Chronic health conditions, such as ulcerative colitis, can markedly increase your risk of developing certain cancers",
+        "Lifestyle factors such as heavy smoking and consumption of alcohol can also damage DNA and lead to cancer",
+        "Environmental factors such as air and water pollution",
+        "Inherited genetic defects"
+      ]
+    }
+  },
+  {
+    "title": "What are the stages of cancer?",
+    "content": {
+      "title": "There are 5 main stages of cancer:",
+      "points": [
+        "Stage 0: In this stage, the cancer is still located at the place it started and hasn’t spread to surrounding tissue. Cancer is often curable at this stage.",
+        "Stage I: In this stage, there is typically a small tumour that hasn’t spread too much. It can usually be treated, which is why this stage is considered an early stage.",
+        "Stage II: This stage usually refers to a large tumour, however, one that hasn’t spread too much. Successful treatment depends on a number of factors including size and location of the tumour.",
+        "Stage III: In this stage, the cancerous tumour or area is larger and has spread to surrounding tissues and/or reached the immune system. Treatment is more difficult at this stage.",
+        "Stage IV: In this stage, the cancer has already spread from the original location to at least 1 other body organ. Also called 'metastatic' cancer, this is the most difficult stage of cancer to cure."
+      ]
+    }
+  },
+  {
+    "title": "How is cancer diagnosed?",
+    "content": {
+      "title": "Doctors use a number of different tools to diagnose cancer, such as physical exams and laboratory tests, including numerous blood tests. They may also require imaging tests, biopsies and other methods to further diagnose and understand the condition.",
+      "points": []
+    }
+  },
+  {
+    "title": "When should I get tested for cancer?",
+    "content": {
+      "title": "You can get tested for cancer as recommended by your doctor based on your symptoms or risk factors. Additionally, it is useful to get regular screening for certain types of cancer which can be detected early, such as cervical cancer. Early diagnosis is the key to curing cancer – the earlier you catch it, the better chances you have!",
+      "points": []
+    }
+  },
+  {
+    "title": "What cancer diagnostic tests do you offer?",
+    "content": {
+      "title": "We offer the following cancer tests:",
+      "points": [
+        "Carcinoembryonic Antigen (CEA)",
+        "Beta HCG, Alfa FetoProtein (AFP)",
+        "CA 19.9 Cancer Marker"
+      ]
+    },
+    "content1": {
+      "title": "Additionally, we also offer a cervical cancer package that includes:",
+      "points": ["PAP Test (LBC) ", "HPV Test", "HPV/PAP test", "PSA Total"]
+    }
+  },
+  {
+    "title": "What is cervical cancer?",
+    "content": {
+      "title": "Cervical cancer is a type of cancer that starts in the cervix i.e. the narrow end of the womb. It develops slowly over a period of time. In the earliest stage it starts as abnormal changes in the cells of the cervix, known as “dysplasia”, which then develops into cancer over time. HPV infections are a major risk factor for developing cervical cancer.  <br/> <br/> Cervical cancer is preventable and can be cured if caught early. HPV vaccination and regular cervical cancer and HPV testing is recommended as a means to avoiding late stages cervical cancer development.",
       "points": []
     }
   }
