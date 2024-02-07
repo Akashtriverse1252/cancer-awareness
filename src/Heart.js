@@ -16,7 +16,7 @@ import feature_icon_02 from "./images/feature02.webp";
 import feature_icon_03 from "./images/feature03.webp";
 import feature_icon_04 from "./images/feature04.webp";
 import bannerImage from "./images/mobile_banner.SVG";
-import bannerImage_1 from "./images/Assure Cancer Day Web banner_1080x700.jpg";
+import bannerImage_1 from "./images/cancer day.png";
 import packsData from "./data/Heart.json";
 import accordionData from "./data/HeartAccordions.json";
 import {
@@ -480,7 +480,9 @@ export const Heart = () => {
                   <AccordionItemButton>{item.title}</AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel className="accordion__panel active">
-                  <p dangerouslySetInnerHTML={{ __html: item.content  .title }}></p>
+                  <p
+                    dangerouslySetInnerHTML={{ __html: item.content.title }}
+                  ></p>
                   {item.content.points.length > 0 && (
                     <ul>
                       {item.content.points.map((point, pointIndex) => (
@@ -490,7 +492,11 @@ export const Heart = () => {
                   )}
                   {item.content1 && (
                     <>
-                      <p dangerouslySetInnerHTML={{ __html: item.content1.title }}></p>
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: item.content1.title,
+                        }}
+                      ></p>
                       <ul>
                         {item.content1.points.map((point, pointIndex) => (
                           <li key={pointIndex}>{point}</li>

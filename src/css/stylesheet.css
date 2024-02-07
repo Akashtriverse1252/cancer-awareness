@@ -1,11 +1,11 @@
 * {
-  --green-color: #b4abee;
+  --green-color: #d2bce4;
   --purple-color: #7868e6;
   --heading-text-color: #322985;
   --black-color: #000;
   --background-web-color: #e8e6f4;
   --Enq-btn: #f6f6f6;
-  --gradient: linear-gradient(130deg, #8827caeb, #178feee0);
+  --gradient: #b48ed1;
 }
 
 .social_connct a,
@@ -186,12 +186,7 @@
   font-size: 2.722rem;
   letter-spacing: 4px;
   text-transform: uppercase;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-image: linear-gradient(52deg, #7610c7, #0c90d2);
-  background-size: 100% 100%;
-  background-position: 0;
+  color: #7f68ea;
   text-align: center;
   position: relative;
   margin: 0.833rem 0;
@@ -1226,4 +1221,11 @@ input.error-input {
   text-align: center;
   color: #d92525;
   background: #ffb5b594;
+}
+img.banner_desktop {
+  height: 70vh;
+}
+
+div#homeCollectionForm {
+  width: 70%;
 }
