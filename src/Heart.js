@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import Title from "./components/Title";
 import WebLayout from "./components/WebLayout";
 import BannerSection from "./components/BannerSection";
 import Footer from "./components/Footer";
 import { index as Packs } from "./components/Packs/index";
 import ContactBtn from "./components/ContactBtn";
-import {Logo} from "./components/Svg-compoent/Logo";
-// import Logo from "./images/SVG/Assure Logo.svg";
+import { Logo } from "./components/Svg-compoent/Logo";
 import Call from "./images/call icon.png";
 import Whatsapp from "./images/whatsapp-2.webp";
 import feature_icon_01 from "./images/feature01.webp";
 import feature_icon_02 from "./images/feature02.webp";
 import feature_icon_03 from "./images/feature03.webp";
 import feature_icon_04 from "./images/feature04.webp";
-import bannerImage from "./images/THYROID_Campaign_M2.jpg";
-import bannerImage_1 from "./images/Thyroid Campaign.jpg";
+import bannerImage from "./images/mobile_banner.SVG";
+import bannerImage_1 from "./images/Assure Cancer Day Web banner_1080x700.jpg";
 import packsData from "./data/Heart.json";
 import accordionData from "./data/HeartAccordions.json";
 import {
@@ -27,92 +28,59 @@ import {
 } from "react-accessible-accordion";
 import Slider from "react-slick";
 
+const validationSchema = Yup.object().shape({
+  name: Yup.string().required("Name is required"),
+  mobileNumber: Yup.string()
+    .required("Mobile number is required")
+    .matches(
+      /^[0-9]{10}$/,
+      "Invalid mobile number format (should be 10 digits)"
+    ),
+});
+
 export const Heart = () => {
-  // Submit API code start
-  const [formData, setFormData] = useState({
-    name: "",
-    mobileNumber: "",
-    lp_name: "Thyroid Check-up",
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      mobileNumber: "",
+      lp_name: "cancer awareness",
+    },
+    validationSchema,
+    onSubmit: async (values, { setSubmitting }) => {
+      try {
+        // Perform any pre-submission actions here, if needed
+
+        // API endpoint for form submission
+        const apiUrl = "https://www.assurepathlabs.com/api/submit_form.php";
+
+        // Make the API request
+        const response = await axios.post(apiUrl, values);
+
+        // Handle the response from the server
+        console.log("Server response:", response.data);
+
+        // If submission is successful, show the thank you message
+        if (response.data.success) {
+          setShowThankYou(true);
+
+          // Automatically hide the thank you message after 5 seconds
+          setTimeout(() => {
+            setShowThankYou(false);
+          }, 5000);
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      } finally {
+        // Reset the form state after submission
+        setSubmitting(false);
+      }
+    },
   });
 
-  const [errors, setErrors] = useState({
-    name: "",
-    mobileNumber: "",
-  });
+  const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
+    formik;
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-
-    setErrors({
-      ...errors,
-      [e.target.name]: "",
-    });
-  };
-
-  const validateForm = () => {
-    let isValid = true;
-    const newErrors = {};
-
-    if (formData.name.trim() === "") {
-      newErrors.name = "Name is required";
-      isValid = false;
-    }
-
-    if (formData.mobileNumber.trim() === "") {
-      newErrors.mobileNumber = "Mobile number is required";
-      isValid = false;
-    } else if (!/^[0-9]{10}$/.test(formData.mobileNumber)) {
-      newErrors.mobileNumber =
-        "Invalid mobile number format (should be 10 digits)";
-      isValid = false;
-    }
-
-    if (showThankYou) {
-      document.getElementById("dataLayer_submit_btn").click();
-      // console.log("boooyaaaaa");
-    }
-
-    setErrors(newErrors);
-    return isValid;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (validateForm()) {
-      setIsSubmitting(true);
-
-      // console.log("Form data:", formData);
-
-      fetch("https://www.assurepathlabs.com/api/submit_form.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          setIsSubmitting(false);
-
-          console.log("Server response:", data);
-          if (data.success) {
-            setShowThankYou(true);
-          }
-        })
-        .catch((error) => {
-          setIsSubmitting(false);
-
-          console.error("Error:", error);
-        });
-    }
-  };
 
   // Submit API code end
 
@@ -211,7 +179,7 @@ export const Heart = () => {
                 <div className="logo">
                   <a href="#">
                     {/* <img src={Logo} alt="Assure-path-lab-logo " /> */}
-                    <Logo/>
+                    <Logo />
                   </a>
                 </div>
                 <a href="tel:01814667555" onclick={handlePhoneNumberClick}>
@@ -238,7 +206,7 @@ export const Heart = () => {
             <img src={bannerImage_1} alt="" className="banner_desktop" />
             {/* <div className="banner_img_cnt">
               <p className="text-white">
-                Comprehensive <br /> <span className="text-red-300">Heart</span>{" "}
+                Comprehensive <br /> <span className="text-red-300">Heart</span>
                 Checkup
               </p>
               <p className="hidden">PACKAGES IN JALANDHAR</p>
@@ -257,42 +225,45 @@ export const Heart = () => {
                     type="text"
                     name="name"
                     placeholder="Name*"
-                    value={formData.name}
+                    value={values.name}
                     onChange={handleChange}
-                    className={
-                      errors.name
-                        ? "error-input"
-                        : formData.name
-                        ? "input-filled"
-                        : ""
-                    }
+                    onBlur={handleBlur}
+                    className={errors.name && touched.name ? "error-input" : ""}
                   />
+                  {errors.name && touched.name && (
+                    <div className="error-message">{errors.name}</div>
+                  )}
                 </li>
                 <li>
                   <input
                     type="tel"
                     name="mobileNumber"
-                    placeholder="Mobile*"
-                    value={formData.mobileNumber}
+                    placeholder="Contact Number*"
+                    value={values.mobileNumber}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     className={
-                      errors.mobileNumber
+                      errors.mobileNumber && touched.mobileNumber
                         ? "error-input"
-                        : formData.mobileNumber
-                        ? "input-filled"
                         : ""
                     }
                   />
+                  {errors.mobileNumber && touched.mobileNumber && (
+                    <div className="error-message">{errors.mobileNumber}</div>
+                  )}
                 </li>
               </ul>
               <button
                 type="submit"
-                className={`enq_btn btn ${isSubmitting ? "disabled" : ""}`}
-                disabled={isSubmitting}
-                onclick={handleFormSubmittedClick}
+                className={`enq_btn btn ${
+                  formik.isSubmitting ? "disabled" : ""
+                }`}
+                disabled={formik.isSubmitting}
               >
                 <div>
-                  <span>{isSubmitting ? "Submitting..." : "Submit"}</span>
+                  <span>
+                    {formik.isSubmitting ? "Submitting..." : "Submit"}
+                  </span>
                 </div>
               </button>
               <a
@@ -323,8 +294,122 @@ export const Heart = () => {
           </div>
         </div>
       </BannerSection>
+      <WebLayout _id="abt_cancer" _class="abt_cancer ">
+        <Title>What is Cancer</Title>
+        <div className="cancer_scn">
+          <p>
+            Cancer is the rapid spread of abnormal cells that grow beyond their
+            usual boundaries, and can invade adjoining parts of the body or
+            spread to other organs. Cancer can start almost anywhere in the
+            human body when abnormal or damaged cells grow and multiply when
+            they shouldn’t. These cells may form tumors, which are lumps of
+            tissue. Tumors can be cancerous (malignant) or not cancerous
+            (benign).
+          </p>
+          <p>
+            Cancer can be detected by certain signs and symptoms or screening
+            tests. Diagnosing cancer at its earliest stages often provides the
+            best chance for a cure.
+          </p>
+        </div>
+      </WebLayout>
+      <WebLayout _id="type_cancer" _class="type_cancer ">
+        <Title>TYPES OF CANCER</Title>
+        <div className="cancer_typ_scn">
+          <p>
+            There are more than 100 types of cancer and these are usually named
+            after the organ or tissue where it is formed. Lung, prostate,
+            colorectal, stomach and liver cancer are the most common types of
+            cancer in men, while breast, colorectal, lung, cervical and thyroid
+            cancer are the most common among women.
+          </p>
+        </div>
+      </WebLayout>
+      <WebLayout _id="stmptons" _class="stmptons">
+        <Title>SYMPTOMS</Title>
+        <div className="stmptons_scn gap-5">
+          <p className="stmptons_title">
+            The signs and symptoms of cancer depend on which part of the body is
+            affected. Some common signs and symptoms include:
+          </p>
+          <div className="symptoms">
+            <div className="symptomsbox">
+              <div className="symtionleft">
+                <span>1</span>
+              </div>
+              <div className="symtionrgt">
+                <p>
+                  Lump or area of thickening that can be felt under the skin
+                </p>
+              </div>
+            </div>
+            <div className="symptomsbox">
+              <div className="symtionleft">
+                <span>2</span>
+              </div>
+              <div className="symtionrgt">
+                <p>Weight changes including unexpected loss or gain</p>
+              </div>
+            </div>
+            <div className="symptomsbox">
+              <div className="symtionleft">
+                <span>3</span>
+              </div>
+              <div className="symtionrgt">
+                <p>Persistent cough or shortness of breath</p>
+              </div>
+            </div>
+            <div className="symptomsbox">
+              <div className="symtionleft">
+                <span>4</span>
+              </div>
+              <div className="symtionrgt">
+                <p>Persistent, unexplained fever or night sweats</p>
+              </div>
+            </div>
+            <div className="symptomsbox">
+              <div className="symtionleft">
+                <span>5</span>
+              </div>
+              <div className="symtionrgt">
+                <p>Unexplained bleeding or bruising</p>
+              </div>
+            </div>
+            <div className="symptomsbox">
+              <div className="symtionleft">
+                <span>6</span>
+              </div>
+              <div className="symtionrgt">
+                <p>
+                  Skin changes, such as yellowing, darkening, or reddening of
+                  the skin, sores that will not heal, or changes in existing
+                  warts
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </WebLayout>
+      <WebLayout _id="riskfactor" _class="riskfactor">
+        <Title>RISK FACTORS</Title>
+        <div className="riskfact">
+          <ul>
+            <li>
+              Chronic health conditions, such as ulcerative colitis, can
+              markedly increase your risk of developing certain cancers
+            </li>
+
+            <li>
+              Lifestyle factors such as heavy smoking and consumption of
+              alcohol can also damage DNA and lead to cancer
+            </li>
+            <li>Environmental factors such as air and water pollution</li>
+            <li>Inherited genetic defects</li>
+          </ul>
+        </div>
+      </WebLayout>
       <WebLayout _id="package" _class="package ">
-        <Title>OUR POPULAR PACKAGES </Title>
+        <Title>GET EARLY SCREENING DONE WITH ASSURE</Title>
         <div className="package_Scn">
           <Slider {...settings}>
             {packsData.map((pack, index) => (

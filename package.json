@@ -1,6 +1,5 @@
 {
   "name": "assure",
-  "homepage": "/thyroid-checkup",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

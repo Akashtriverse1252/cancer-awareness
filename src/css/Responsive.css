@@ -353,6 +353,16 @@
 }
 
 @media all and (max-width: 800px) {
+  .symptomsbox {
+    width: 50%;
+  }
+  .riskfact ul {
+    width: 90%;
+  }
+  .riskfact ul li:before {
+    width: 20px;
+    left: -25px;
+  }
   .mobile_show {
     display: block;
   }
@@ -485,7 +495,9 @@
   .landing_banner_img {
     display: flex;
     position: relative;
-    padding: 40px 0;
+    padding: 0;
+    width: 95%;
+    justify-content: end;
   }
 
   .contact_mobile_form ul li:first-child {
@@ -503,7 +515,7 @@
   }
 
   .landing_banner_img:before {
-    content: "";
+    content: none;
     width: 95%;
     height: 100%;
     background: #e5f6fe;
@@ -515,7 +527,6 @@
   }
 
   .contact_mobile_form {
-    background: #6d9cd9;
     padding: 2.25rem 3.8rem;
     width: 90%;
   }
@@ -530,9 +541,11 @@
   }
 
   .landing_banner_img img {
-    width: 75%;
+    width: 100%;
+    height: auto;
     z-index: 0;
     padding-left: 2%;
+    border-radius: 110px 0 0 110px;
   }
 
   section {
@@ -645,7 +658,7 @@
   }
 
   .package_card_cnt {
-    width: 100%;
+    width: 340px;
     height: auto;
   }
 
@@ -711,9 +724,41 @@
     width: 95%;
     height: fit-content;
   }
+  .landing_banner_img:before {
+    width: 95%;
+    background: #e8e6f4;
+    border-radius: 25% 0 0 25%;
+  }
+  .stmptons_title,
+  .cancer_typ_scn p,
+  .cancer_scn p {
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 17px;
+    line-height: 1.4;
+    text-wrap: balance;
+  }
+  .float_btn {
+    background: var(--gradient);
+  }
 }
 
 @media all and (max-width: 480px) {
+  .riskfact ul {
+    width: 100%;
+  }
+  .riskfact ul li {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+  }
+  .riskfact ul li:before {
+    left: 50%;
+    bottom: -10px;
+    top: auto;
+    width: 40px;
+    transform: translateX(-50%);
+  }
   .containers {
     width: 98%;
   }
@@ -783,9 +828,16 @@
   .logo svg {
     width: 100%;
   }
+  .symptomsbox {
+    width: 90%;
+  }
 }
 
 @media all and (max-width: 390px) {
+  .package_card_cnt {
+    width: 95%;
+    height: auto;
+  }
   .contact_mobile_form h4 {
     font-size: 1rem;
     white-space: break-spaces;

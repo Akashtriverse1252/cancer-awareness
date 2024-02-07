@@ -9,7 +9,7 @@ import { Heart } from "./Heart";
 function App() {
   return (
     <>
-      <Router basename="/thyroid-checkup">
+      <Router >
         <Routes>
           <Route exact path="/" element={<Heart />} />
         </Routes>
